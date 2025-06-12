@@ -5,6 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // --- INICIO DE LA MODIFICACIÓN ---
+  base: '/V2_Riverhead/', // ¡ESTA ES LA LÍNEA MÁS IMPORTANTE PARA GITHUB PAGES!
+  // --- FIN DE LA MODIFICACIÓN ---
+
   server: {
     host: "::",
     port: 8080,
