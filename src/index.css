@@ -1,0 +1,130 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Riverhead Foods Design System */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 13% 22%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 22%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 20% 94%;
+    --secondary-foreground: 142 48% 24%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 142 20% 94%;
+    --accent-foreground: 142 48% 24%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.5rem;
+
+    /* Riverhead specific colors */
+    --primary-green: 142 76% 36%; /* #16a34a */
+    --dark-green: 142 48% 24%; /* #15803d */
+    --light-green: 142 68% 93%; /* #dcfce7 */
+    --footer-blue: 200 100% 18%; /* #004259 */
+    --section-bg: 210 17% 98%; /* #f8f9fa */
+    --body-text: 220 13% 28%; /* #374151 */
+    --muted-text: 220 9% 46%; /* #6b7280 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    color: hsl(var(--body-text));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--dark-green));
+    font-weight: 700;
+  }
+
+  h1 { @apply text-4xl md:text-5xl font-bold; }
+  h2 { @apply text-3xl md:text-4xl font-bold; }
+  h3 { @apply text-2xl md:text-3xl font-semibold; }
+  h4 { @apply text-xl md:text-2xl font-semibold; }
+  h5 { @apply text-lg md:text-xl font-medium; }
+  h6 { @apply text-base md:text-lg font-medium; }
+}
+
+@layer components {
+  .btn-success {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl font-medium inline-flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+
+  .btn-outline-success {
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-xl font-medium inline-flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+
+  .text-link {
+    @apply text-primary font-medium hover:text-primary/80 inline-flex items-center gap-1 transition-colors;
+  }
+
+  .product-card {
+    @apply bg-white rounded-2xl shadow-sm border transition-all duration-300;
+  }
+
+  .product-card:hover {
+    @apply shadow-xl scale-105;
+  }
+
+  .section-bg-light {
+    background: linear-gradient(135deg, hsl(var(--section-bg)) 0%, hsl(var(--light-green)) 100%);
+  }
+
+  .footer-bg {
+    background-color: hsl(var(--footer-blue));
+  }
+
+  .nav-link-active {
+    @apply font-bold text-primary relative;
+  }
+
+  .nav-link-active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-body {
+    color: hsl(var(--body-text));
+  }
+
+  .text-muted {
+    color: hsl(var(--muted-text));
+  }
+
+  .organic-shadow {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .organic-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+}
